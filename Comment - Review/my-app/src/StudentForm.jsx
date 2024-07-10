@@ -26,7 +26,7 @@ const StudentForm = () => {
     return (
         <div className="form-container">
             <form onSubmit={handleSubmit} className="student-form">
-                <label>
+                
                     Full Name:
                     <input 
                         type="text" 
@@ -35,8 +35,8 @@ const StudentForm = () => {
                         onChange={handleChange} 
                         className="form-input"
                     />
-                </label>
-                <label>
+                
+                 
                     Email:
                     <input 
                         type="email" 
@@ -45,8 +45,8 @@ const StudentForm = () => {
                         onChange={handleChange} 
                         className="form-input"
                     />
-                </label>
-                <label>
+                 
+                 
                     Password:
                     <input 
                         type="password" 
@@ -55,8 +55,8 @@ const StudentForm = () => {
                         onChange={handleChange} 
                         className="form-input"
                     />
-                </label>
-                <label>
+                 
+                 
                     Grade:
                     <select 
                         name="grade" 
@@ -70,10 +70,10 @@ const StudentForm = () => {
                         <option value="Junior">Junior</option>
                         <option value="Senior">Senior</option>
                     </select>
-                </label>
+                 
                 <div className="gender-selection">
                     Gender:
-                    <label>
+                     
                         <input 
                             type="radio" 
                             name="gender" 
@@ -82,8 +82,8 @@ const StudentForm = () => {
                             onChange={handleChange} 
                         />
                         Male
-                    </label>
-                    <label>
+                     
+                     
                         <input 
                             type="radio" 
                             name="gender" 
@@ -92,7 +92,7 @@ const StudentForm = () => {
                             onChange={handleChange} 
                         />
                         Female
-                    </label>
+                     
                 </div>
                 <button type="submit" className="submit-button">Submit</button>
             </form>
