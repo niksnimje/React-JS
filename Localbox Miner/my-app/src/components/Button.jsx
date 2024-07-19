@@ -1,17 +1,22 @@
-import React, { useContext } from 'react'
-import { theamcontext } from '../context/Theamcontext'
-
-
+import React, { useContext, useState } from 'react';
+import { theamcontext } from '../context/Theamcontext';
 
 function Button() {
+    const { Theamcheange } = useContext(theamcontext);
+    const [isSun, setIsSun] = useState(true);
 
-    const {Theamcheange}=useContext(theamcontext)
+    const handleClick = () => {
+        setIsSun(!isSun);
+        Theamcheange();
+    };
 
-  return (
-    <div>
-        <button className='btn-1' onClick={Theamcheange}>Megic Btn</button>
-    </div>
-  )
+    return (
+        <div>
+            <button className={`btn-1 ${isSun ? 'sun' : 'moon'}`} onClick={handleClick}>
+                {isSun ? '🌜' : '🌞'}
+            </button>
+        </div>
+    );
 }
 
-export default Button
+export default Button;

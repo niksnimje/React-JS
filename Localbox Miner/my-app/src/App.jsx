@@ -1,4 +1,3 @@
-
 import { useContext } from 'react'
 import './App.css'
 import Button from './components/Button'
@@ -10,7 +9,6 @@ function App() {
   
   const {theam}=useContext(theamcontext)
   
-
   return (
     <>
       <div className={`main1 ${theam === 'light' ? 'light-theme' : 'dark-theme'}`}>

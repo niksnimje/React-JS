@@ -1,6 +1,5 @@
 import {  createContext, useState } from "react";
 
-
 // create part
 export const theamcontext=createContext()
 
