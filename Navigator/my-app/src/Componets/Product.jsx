@@ -1,11 +1,16 @@
 import axios from 'axios';
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState ,useContext } from 'react';
 import { Link } from 'react-router-dom';
+
+import { Authcontext } from '../Routers/Authcontext'
+
 
 
 function Product() {
   const [productData, setProductData] = useState([]);
   const [page, setPage] = useState(1);
+
+  const {logout}=useContext(Authcontext)
 
 
   const fetchData = () => {
@@ -38,11 +43,13 @@ function Product() {
           </div>
         ))}
       </div>
-      <div >
+      <div className='main-btn-prev-next' >
         <button onClick={() => setPage(page - 1)} disabled={page === 1}>Prev</button>
         <span>{page}</span>
         <button onClick={() => setPage(page + 1)} disabled={page === 2}>Next</button>
       </div>
+      <button onClick={logout}>Logout</button>
+
     </div>
   );
 }

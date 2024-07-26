@@ -5,7 +5,6 @@ import Product from '../Componets/Product';
 import Login from '../Componets/Login';
 import About from '../Componets/About';
 import Description from '../Componets/Description';
-
 import Private from '../Componets/Private';
 
 

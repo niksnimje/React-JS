@@ -1,19 +1,12 @@
-import React from 'react'
-
-
-
+import React from 'react';
 
 function Home() {
   return (
-    <div>
-
-
-        <h1>Hello Home</h1>
-
-
+    <div className="home-animation">
+      <h1>Welcome to Our Product Store</h1>
+      
     </div>
-  )
+  );
 }
 
-
-export default Home
+export default Home;
