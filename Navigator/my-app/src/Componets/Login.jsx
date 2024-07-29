@@ -37,15 +37,17 @@ function Login() {
           value={email}
           onChange={(e) => setemail(e.target.value)}
           placeholder='Enter Email'
+          className='email-form'
         /> 
-        <br />
+        <br /> <br />
         <input
           type="Password"
           value={password}
           onChange={(e) => setpassword(e.target.value)}
           placeholder='Enter Password'
-        />
-        <input type="submit" />
+          className='pass-form'
+        /> <br /> <br />
+        <input type="submit" className='sub-form' />
       </form>
       <h5>eve.holt@reqres.in</h5>
     </div>
