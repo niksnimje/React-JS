@@ -1,1 +1,1 @@
-My video url=" project is createing soon so plaese wait i'm re-submit again !! "
+My video url=" Video Is readdy uploading... "

@@ -1,60 +1,96 @@
-import axios from 'axios'
-import React, { useEffect, useState } from 'react'
-import { useParams } from 'react-router-dom'
+import axios from 'axios';
+import React, { useEffect, useState } from 'react';
+import { useParams } from 'react-router-dom';
 
-function EditProduct(prams) {
+function EditProduct() {
+  const { id } = useParams();
+  const initialSet = {
+    title: "",
+    image: "",
+    description: "",
+    price: 0,
+    category: ""
+  };
 
-    const {id}=useParams()
-    const inisiatlset ={
-        title:"",
-        image:"",
-        description:"",
-        price:0,
-        catagory:""
-    }
-    const [formdata,setformdata]=useState(inisiatlset)
+  const [formData, setFormData] = useState(initialSet);
 
-    const hendelchange=((e)=>{
-        setformdata({...formdata,[e.target.value]:e.target.value})
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData({ ...formData, [name]: value });
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    console.log(formData);
+
+    axios.put(`http://localhost:3000/product/${id}`,formData)
+    .then((res)=>{
+      console.log(res)
+      alert("update okay")
     })
+    .catch((err)=>console.log(err))
 
-    const hendelsubmit=((e)=>{
-        e.preventDefault()
-    })
+  };
 
+  const { title, image, description, price, category } = formData;
 
+  const getSingleData = () => {
+    axios.get(`http://localhost:3000/product/${id}`)
+      .then((res) => setFormData(res.data))
+      .catch((err) => console.log(err));
+  };
 
-    const {title,image,description,price,catagory}=formdata
-
-    const getsingledata=()=>{
-        axios.get(`http://localhost:3000/product${id}`)
-        .then((res)=>console.log(res))
-        .catch((err)=>console.log(err))
-    }
-
-    useEffect(()=>{
-        getsingledata()
-    },[])
+  useEffect(() => {
+    getSingleData();
+  }, []);
 
   return (
     <>
-        <h1>Edit Page</h1>
-        <form action="" onSubmit={(e)}>
-            <input name='image' value={image} onChange={(e)=>hendelchange(e)} type="text" placeholder='img' /> <br />
-            <input  name='title' value={title} onChange={(e)=>hendelchange(e)} type="text" placeholder='title'/> <br />
-            <select  name='catagory' value={catagory} onChange={(e)=>hendelchange(e)} id=""> 
-                <option value="">Select Your Catagory</option>
-                <option value="">men's clothing</option>
-                <option value="">women's clothing</option>
-                <option value="">electronics</option>
-                <option value="">jewelery</option>
-            </select> <br />
-            <input  name='price' value={price} onChange={(e)=>hendelchange(e)} type="text" placeholder='price' /><br />
-            <input   name='description' value={description} onChange={(e)=>hendelchange(e)}type="text" placeholder='description' /><br />
-            <input  type="submit" />
-        </form>
+      <h1>Edit Page</h1>
+      <form onSubmit={handleSubmit}>
+        <input
+          onChange={handleChange}
+          type="text"
+          name="image"
+          value={image}
+          placeholder="img"
+        /> <br />
+        <input
+          onChange={handleChange}
+          type="text"
+          name="title"
+          value={title}
+          placeholder="title"
+        /> <br />
+        <select
+          onChange={handleChange}
+          name="category"
+          value={category}
+        >
+          <option value="">Select Your Category</option>
+          <option value="men's clothing">men's clothing</option>
+          <option value="women's clothing">women's clothing</option>
+          <option value="electronics">electronics</option>
+          <option value="jewelery">jewelery</option>
+        </select> <br />
+        <input
+          onChange={handleChange}
+          type="text"
+          name="price"
+          value={price}
+          placeholder="price"
+        /><br />
+        <input
+          onChange={handleChange}
+          type="text"
+          name="description"
+          value={description}
+          placeholder="description"
+        /><br />
+        <input type="submit" />
+      </form>
     </>
-  )
+  ); 
 }
 
-export default EditProduct
+export default EditProduct;
