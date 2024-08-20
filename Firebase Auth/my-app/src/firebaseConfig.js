@@ -3,13 +3,12 @@ import { initializeApp } from "firebase/app";
 import { getAuth, GoogleAuthProvider } from "firebase/auth";
 
 const firebaseConfig = {
-  apiKey: "AIzaSyDLLzi245YciMe9kq6lBCjH-nhbaSed-LE",
-  authDomain: "fir-database-e60af.firebaseapp.com",
-  projectId: "fir-database-e60af",
-  storageBucket: "fir-database-e60af.appspot.com",
-  messagingSenderId: "190357057134",
-  appId: "1:190357057134:web:7f99aee6233a533ee8007f",
-  measurementId: "G-33C6E1Y4R0"
+  apiKey: "AIzaSyDdno_wc6OOyfUG4iF0_SxDIrzRiSZv66c",
+  authDomain: "reactprojectauth-c8bf8.firebaseapp.com",
+  projectId: "reactprojectauth-c8bf8",
+  storageBucket: "reactprojectauth-c8bf8.appspot.com",
+  messagingSenderId: "102254315986",
+  appId: "1:102254315986:web:41882e6e073cc2bf7b600b"
 };
 
 const app = initializeApp(firebaseConfig);
@@ -17,6 +16,7 @@ const auth = getAuth(app);
 const provider = new GoogleAuthProvider();
 
 export { auth, provider };
+
 
 
 
