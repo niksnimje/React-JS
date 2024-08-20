@@ -9,6 +9,9 @@ import GoogleButton from 'react-google-button';
 const Login = () => {
   const navigate = useNavigate();
 
+  const [email, setEmail] = useState('')
+  const [password, setPassword] = useState('');
+
   const handleGoogleSignIn = () => {
     signInWithPopup(auth, provider)
       .then((result) => {
@@ -25,7 +28,7 @@ const Login = () => {
       <h1 className='text-center'>Login</h1>
       <Form >
         <Form.Group className="mb-3" controlId="formBasicEmail">
-          <Form.Label>Email address</Form.Label>
+          <Form.Label onChange={(e)=>setEmail(e.target.value)}>Email address</Form.Label>
           <Form.Control type="email" placeholder="Enter email" />
         </Form.Group>
 
