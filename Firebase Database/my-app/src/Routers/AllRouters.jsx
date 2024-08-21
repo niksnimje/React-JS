@@ -4,6 +4,7 @@ import PrivateRoutes from '../components/PrivateRoutes'
 import Login from '../components/Login'
 import Navbar from '../components/Navbar';
 import Dashboard from '../components/Dashboard';
+import Home from '../components/Home';
 
 function AllRouters() {
   return (
@@ -11,7 +12,7 @@ function AllRouters() {
         <Router>
       <Navbar />
       <Routes>
-        <Route path="/" element={<div>Home</div>} />
+        <Route path="/" element={<Home />} />
         <Route path="/login" element={<Login />} />
         <Route path="/dashboard" element={<Dashboard />} />
       </Routes>
