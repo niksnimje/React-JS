@@ -14,9 +14,10 @@ const CustomNavbar = () => {
   };
 
   return (
-    <Navbar bg="black" variant="dark" expand="lg">
-      <Container>
-        <Navbar.Brand as={Link} to="/">Home</Navbar.Brand>
+    <Navbar className='d-flex justify-content-between' style={{backgroundColor:"#1d2026"} } variant="dark" expand="lg">
+      <Container >
+      <img src="https://i.postimg.cc/RZSD7FZd/logo.png" alt="" class="logo" />
+        <Navbar.Brand style={{marginLeft:"35%"}} as={Link} to="/">Home</Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="me-auto">

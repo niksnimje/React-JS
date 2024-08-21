@@ -1,6 +1,8 @@
 // src/components/Dashboard.jsx
 import React, { useEffect, useState } from 'react';
 import { Container, Row, Col } from 'react-bootstrap';
+import '../App.css'
+
 
 const Dashboard = () => {
   const [products, setProducts] = useState([]);
@@ -19,7 +21,8 @@ const Dashboard = () => {
   }, []);
 
   return (
-    <Container>
+    
+    <Container fluid className="text-white" style={{backgroundColor:"#1d2026"} }>
       <h1 className='text-center'>Dashboard</h1>
       <Row>
         {products.map((el) => (
