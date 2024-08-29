@@ -1,14 +1,16 @@
-import AllRoutes from "./AllRoutes";
-import Navbar from "./Components/Navbar";
+
+import './App.css'
+import AllRouters from './Routers/AllRouters'
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 function App() {
+  
+
   return (
     <>
-      <Navbar />
-      <AllRoutes />
+      <AllRouters />
     </>
-  );
+  )
 }
 
-export default App;
-
+export default App
